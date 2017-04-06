@@ -1,0 +1,14 @@
+<?php
+	session_start();
+	if(isset($_REQUEST['id']))
+		$cid=$_REQUEST['id'];
+	if(isset($_SESSION['type']))
+	{
+		if($_SESSION['type']=='User')
+			header('car_hire.php?id=$cid');
+	}
+	else
+	{
+		header('login.php?id=$cid');
+	}
+?>
